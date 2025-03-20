@@ -28,6 +28,24 @@ class LoginPage extends BasePage {
         await expect(GreatingHeading).toBeDisplayed();
     }
     
+    async SettingbtnLinkText() {
+        const settingsLocator = await $('//div[contains(@class, "ChatSidebar_itemText") and text()="Settings"]');
+        // await $(settingsLocator).waitForDisplayed({ timeout: 5000 }); // Ensure element is visible
+        await settingsLocator.click(); // Click on the settings button
+    }
+
+    async LogoutBtn() {
+        const logoutbtnLocator = await $('//div[contains(@class, "AccountNav_text") and text()="Logout"]');
+        await $(logoutbtnLocator).click();
+    }
+
+    async LogInToYourAccountText() {
+        const LogInToYourAccountText = await $('//div[contains(@class, "sc-fBdRDi VFfbK") and text()="Log in  to your account"]');
+        await expect(LogInToYourAccountText).toBeDisplayed();
+    }
+
+
+
 
 }
 

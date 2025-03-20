@@ -81,6 +81,8 @@ exports.config = {
         acceptInsecureCerts: true,
     }],
 
+    
+
     // Log level
     logLevel: 'info',
 
@@ -118,6 +120,9 @@ exports.config = {
     baseUrl: 'https://staging.deftgpt.com/en/login',
 
     // Hooks for better debugging
+
+    
+
     beforeScenario: async function (world) {
         console.log(`Running scenario: ${world.pickle.name}`);
     },

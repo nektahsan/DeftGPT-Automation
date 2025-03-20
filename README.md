@@ -18,3 +18,5 @@ Follow the instructions:
 2) To execute test cases:
 
 npx wdio wdio.conf.js --logLevel debug
+
+3) add the credentials.json file to the folder before running the test.
