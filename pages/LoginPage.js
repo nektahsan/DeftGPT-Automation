@@ -44,6 +44,17 @@ class LoginPage extends BasePage {
         await expect(LogInToYourAccountText).toBeDisplayed();
     }
 
+    async unregisteredUserMessage() {
+        const UnregistereduserMessageLocator = await $("//div[@class='sc-fXSgeo kVPSHy' and text()='User not found']");
+        await expect(UnregistereduserMessageLocator).toBeDisplayed();
+    }
+
+    async validEmailAddressMessage() {
+        const validEmailAddressMessageLocator = await $("//span[text()='Please enter a valid email']");
+        await expect(validEmailAddressMessageLocator).toBeDisplayed();
+    }
+
+
 
 
 

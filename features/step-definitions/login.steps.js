@@ -2,6 +2,7 @@ const { Given, When, Then } = require('@wdio/cucumber-framework');
 const LoginPage = require('../../pages/LoginPage');
 const { getMagicLink } = require("../../gmailUtils");
 const path = require('path');
+const WorkSpacePage = require('../../pages/WorkSpacePage');
 
 
 
@@ -67,4 +68,16 @@ Then("I should see log into your account text", async () => {
     await browser.pause(2000);
 
 });
+
+Then("I should see user not found message", async() => {
+    await LoginPage.unregisteredUserMessage();
+
+});
+
+Then("I should see please enter valid email address message", async() => {
+    await LoginPage.unregisteredUserMessage();
+
+});
+
+
 
