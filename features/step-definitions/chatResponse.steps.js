@@ -6,7 +6,7 @@ const path = require('path');
 
 
 
-console.log("✅ Step definitions file is loaded!"); // Debugging step
+console.log("Step definitions file is loaded!"); // Debugging step
 
 // let models = ["Deepseek V3", "GPT-4o mini", "GPT-4-Omni", "GPT-o1", "GPT-o1-Mini"];
 
@@ -20,10 +20,10 @@ When("I click and enter text in chat prompt",async() => {
 
 Then("The chat response should contain relevant AI keywords for {string}", async function (modelName) {
     const expectedKeywords = ["artificial intelligence", "machines", "learning"];
-    console.log(`🔍 Model name received: ${modelName}`); // Debugging
+    console.log(`Model name received: ${modelName}`); 
 
     if (!modelName) {
-        throw new Error("❌ Model name is undefined! Check Scenario Outline mapping.");
+        throw new Error("Model name is undefined! Check Scenario Outline mapping.");
     }
 
     await ChatResponsePage.verifyChatResponse(expectedKeywords, modelName);
@@ -44,11 +44,11 @@ When("I click on attach file button", async() => {
 
 
 When("I upload a file", async () => {
-    const filePath = path.join(__dirname, '../../filesdata/sample.log'); // Adjust the file extension
-    const fileInput = await $('#file-input'); // Ensure this is the correct selector
+    const filePath = path.join(__dirname, '../../filesdata/sample.log'); 
+    const fileInput = await $('#file-input'); 
 
-    await browser.execute("document.getElementById('file-input').style.display='block'"); // Make input visible
-    await fileInput.setValue(filePath); // Set file path directly
+    await browser.execute("document.getElementById('file-input').style.display='block'"); 
+    await fileInput.setValue(filePath); 
     await browser.pause(25000);
 
 });
@@ -63,7 +63,6 @@ Then("I should see filename in Document chat response", async() => {
     await browser.pause(10000);
 });
 
-// genrate image text
 When("I click on generate image button", async() => {
     await ChatResponsePage.clickGenerateImageButton();
     await browser.pause(10000);

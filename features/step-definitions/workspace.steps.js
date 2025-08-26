@@ -4,11 +4,15 @@ const WorkSpacePage = require('../../pages/WorkSpacePage');
 const { getMagicLink } = require("../../gmailUtils");
 const path = require('path');
 
+Then("I should see the New Chat block", async () => {
+  await LoginPage.AssertGreeting();
+  await browser.pause(2000);
+});
 
 
-When("I click on Workspace Button", async() => {
-    await WorkSpacePage.WorkSpaceBtn();
-    await browser.pause(2000);
+When("I click on Workspace Button", async () => {
+  await WorkSpacePage.WorkSpaceBtn();
+  await browser.pause(2000);
 });
 
 Then("I should see Workspace text", async() => {
@@ -31,8 +35,13 @@ When("I click on continue button", async() => {
     await browser.pause(10000);
 })
 
-When("I click and select text for workspace", async() => {
+When("I click on dropdown button", async() => {
     await WorkSpacePage.selectWorkspacedropdown();
+    await browser.pause(2000);
+});
+
+When("I click and select text for workspace", async() => {
+    await WorkSpacePage.selectWorkspacedropdowntext();
     await browser.pause(2000);
 });
 
@@ -47,7 +56,7 @@ When("I click on add URl button", async() => {
 
 
 Then("I should see Workspace name text", async() => {
-    await WorkSpacePage.WorkSpaceNameTextt();
+    await WorkSpacePage.selectWorkspacedropdowntexts();
     await browser.pause(7000);
 });
 
@@ -57,7 +66,7 @@ When("I click on cross button", async() => {
     await browser.pause(3000);
 });
 
-//Edit thread
+
 When("I click on existing workspace", async() =>{
     await WorkSpacePage.clickExistingWorkspace();
     await browser.pause(5000);
